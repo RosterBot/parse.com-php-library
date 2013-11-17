@@ -13,10 +13,10 @@ class parseRestClient{
 
 	public function __construct(parseConfig $config)
 	{
-		$this->_appid = $parseConfig->getAppId();
-    		$this->_masterkey = $parseConfig->getMasterKey();
-    		$this->_restkey = $parseConfig->getRestKey();
-    		$this->_parseurl = $parseConfig->getParseUrl();
+		$this->_appid = $config->getAppId();
+    		$this->_masterkey = $config->getMasterKey();
+    		$this->_restkey = $config->getRestKey();
+    		$this->_parseurl = $config->getParseUrl();
     		
     		$this->init();
 
