@@ -26,6 +26,8 @@ class parseRestClient{
     		$this->_masterkey = $parseConfig->getMasterKey();
     		$this->_restkey = $parseConfig->getRestKey();
     		$this->_parseurl = $parseConfig->getParseUrl();
+    		
+    		$this->init();
 
 		if(empty($this->_appid) || empty($this->_restkey) || empty($this->_masterkey)){
 			$this->throwError('You must set your Application ID, Master Key and REST API Key');
@@ -38,6 +40,11 @@ class parseRestClient{
 			$this->throwError('CURL ssl support not found');	
 		}
 
+	}
+	
+	protected function init()
+	{
+		// hook to extend this
 	}
 
 	/*
