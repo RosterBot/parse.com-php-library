@@ -11,28 +11,20 @@
 */
 class parseCloud extends parseRestClient{
 	public $_options;
-	private $_functionName = '';
 
-	public function __construct($function=''){
+	public function __construct(parseConfig $config){
 		$this->_options = array();
-		if($function != ''){
-			$this->_functionName = $function; 
-		}
-		else{
-			$this->throwError('include the functionName when creating a parseCloud');
-		}
-
-		parent::__construct();
+		parent::__construct($config);
 	}
 
 	public function __set($name,$value){
 		$this->_options[$name] = $value;
 	}
-	public function run(){
-		if($this->_functionName != ''){
+	public function run($function=''){
+		if($functionName != ''){
 			$request = $this->request(array(
 				'method' => 'POST',
-				'requestUrl' => 'functions/'.$this->_functionName,
+				'requestUrl' => 'functions/'.$functionName,
 				'data' => $this->_options,
 			));
 			return $request;
