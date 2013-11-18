@@ -19,23 +19,19 @@ SETUP
 
 **Instructions** after cloning this repository you have to create a file in the root of it called **parseConfig.php**
 
-### sample of parseConfig.php ###
+### sample instance of parseConfig.php ###
 
-Below is what you want parseConfig.php to look like, just fill in your IDs and KEYs to get started.
+Below is what you want a parseConfig instance to look like
 
 ```
-<?php
 
-class parseConfig{
-	
-	const APPID = '';
-	const MASTERKEY = '';
-	const RESTKEY = '';
-	const PARSEURL = 'https://api.parse.com/1/';
-}
 
-?>
-
+$parseConfig = new parseConfig();
+$parseConfig
+  ->setAppId('')
+  ->setMasterKey('')
+  ->setRestKey('');
+  ->setParseUrl('https://api.parse.com/1/');
 ```
 
 
