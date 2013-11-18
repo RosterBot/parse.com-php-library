@@ -2,7 +2,6 @@
 
 class parseObject extends parseRestClient{
 	public $_includes = array();
-	private $_className = '';
 
 	public function __set($name,$value){
 		if($name != '_className'){
@@ -21,7 +20,7 @@ class parseObject extends parseRestClient{
 		}
 	}
 
-	public function get($id,$className){
+	public function get($className,$id){
 		if($className != '' || !empty($id)){
 			$request = $this->request(array(
 				'method' => 'GET',
@@ -36,7 +35,7 @@ class parseObject extends parseRestClient{
 		}
 	}
 
-	public function update($id,$className){
+	public function update($className,$id){
 		if($className != '' || !empty($id)){
 			$request = $this->request(array(
 				'method' => 'PUT',
@@ -57,7 +56,7 @@ class parseObject extends parseRestClient{
 	}
 
 
-	public function delete($id,$className){
+	public function delete($className,$id){
 		if($className != '' || !empty($id)){
 			$request = $this->request(array(
 				'method' => 'DELETE',
