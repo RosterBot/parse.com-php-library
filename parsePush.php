@@ -12,6 +12,17 @@ class parsePush extends parseRestClient
 	public $title;
 	public $where;
 	
+	public function init()
+	{
+		parent::init();
+		$this->data = array();
+	}
+	
+	public function clear()
+	{
+		$this->data = array();
+	}
+	
 	public function __set($name,$value){
 		if($name != 'channel' || $name != 'channels' || $name != 'expiration_time' || $name != 'expiration_interval' || $name != 'type' || $name != 'data' || $name != 'where'){
 			$this->data[$name] = $value;
