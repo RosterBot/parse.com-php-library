@@ -1,6 +1,7 @@
 <?php
 
-class parsePush extends parseRestClient{
+class parsePush extends parseRestClient
+{
 
 	public $channels;
 	public $channel;
@@ -10,17 +11,6 @@ class parsePush extends parseRestClient{
 	public $type;
 	public $title;
 	public $where;
-
-	private $_globalMsg;
-
-	public function __construct($globalMsg=''){
-		if($globalMsg != ''){
-			$this->_globalMsg = $globalMsg;
-		}
-		
-		parent::__construct();
-
-	}
 	
 	public function __set($name,$value){
 		if($name != 'channel' || $name != 'channels' || $name != 'expiration_time' || $name != 'expiration_interval' || $name != 'type' || $name != 'data' || $name != 'where'){
@@ -28,15 +18,15 @@ class parsePush extends parseRestClient{
 		}
 	}
 
-	public function send(){
-		if($this->_globalMsg != ''){
+	public function send($globalMsg = ''){
+		if($globalMsg != ''){
 			$request = $this->request(array(
 				'method' => 'POST',
 				'requestUrl' => 'push',
 				'data' => array(
 					'channel' => '',
 					'data' => array(
-						'alert' => $this->_globalMsg
+						'alert' => $globalMsg
 					)
 				),
 			));
@@ -89,5 +79,3 @@ class parsePush extends parseRestClient{
 		}
 	}
 }
-
-?>
