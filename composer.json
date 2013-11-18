@@ -1,0 +1,24 @@
+{
+        "name": "parse/php-library",
+        "type": "parse-library",
+        "description": "PHP Library for interfacing with Parse.com REST API",
+        "keywords": ["parse.com", "rest api"],
+        "homepage": "https://github.com/Striide/parse.com-php-library.git",
+        "license": "MIT",
+        "authors": [
+                {
+                        "name": "Chad Lindstrom",
+                        "email": "chad.lindstrom@gmail.com"
+                }
+        ],
+        "require": {
+                "php": ">=5.3.2"
+        },
+        "minimum-stability": "dev",
+        "autoload": {
+                "psr-0": {
+                        "parse-library": ""
+                }
+        },
+        "target-dir": "parse-library"
+}
