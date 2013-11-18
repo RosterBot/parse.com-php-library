@@ -3,7 +3,7 @@
 class parseFile extends parseRestClient
 {
 	public function save($fileName,$contentType='',$data=''){
-		if($fileName != '' && $this->_contentType != '' && $this->data != ''){
+		if($fileName != '' && $contentType != '' && $data != ''){
 			$request = $this->request(array(
 				'method' => 'POST',
 				'requestUrl' => 'files/'.$fileName,
