@@ -51,8 +51,8 @@ EXAMPLE
     $parse->tags = $data['upload_data']['tags'];
     
     //create new geo
-    $geo = new parseGeoPoint($data['upload_data']['lat'],$data['upload_data']['lng']);
-    $parse->location = $geo->location;
+    $parse = new parseGeoPoint($parseConfig);
+    $geo_location = $parse->get($data['upload_data']['lat'],$data['upload_data']['lng']);
     
     //use pointer to other class
     $parse->userid = array("__type" => "Pointer", "className" => "_User", "objectId" => $data['upload_data']['userid']);
@@ -60,5 +60,4 @@ EXAMPLE
     //create acl
     $parse->ACL = array("*" => array("write" => true, "read" => true));
     $r = $parse->save();
-    ?>
 ```
