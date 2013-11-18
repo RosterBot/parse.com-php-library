@@ -23,4 +23,26 @@ class parseConfig
   {
     return $this->parseurl;
   }
+  
+  
+  public function setAppId($a)
+  {
+    $this->appid = $a;
+    return $this;
+  }
+  public function setMasterKey($m)
+  {
+    $this->masterkey = $m;
+    return $this;
+  }
+  public function setRestKey($r)
+  {
+    $this->restkey = $r;
+    return $this;
+  }
+  public function setParseUrl($p)
+  {
+    $this->parseurl = $p;
+    return $this;
+  }
 }
