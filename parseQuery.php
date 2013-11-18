@@ -8,7 +8,8 @@ class parseQuery extends parseRestClient{
 	private $_query = array();
 	private $_include = array();
 
-	public function __construct($class=''){
+	public function find($class='')
+	{
 		if($class == 'users' || $class == 'installation'){
 			$this->_requestUrl = $class;
 		}
@@ -19,11 +20,6 @@ class parseQuery extends parseRestClient{
 			$this->throwError('include the className when creating a parseQuery');
 		}
 		
-		parent::__construct();
-
-	}
-
-	public function find(){
 		if(empty($this->_query)){
 			$request = $this->request(array(
 				'method' => 'GET',
@@ -317,5 +313,3 @@ class parseQuery extends parseRestClient{
 		
 	}
 }
-
-?>
