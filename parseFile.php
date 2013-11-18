@@ -1,27 +1,14 @@
 <?php
 
-class parseFile extends parseRestClient{
-
-	private $_fileName;
-	private $_contentType;
-
-	public function __construct($contentType='',$data=''){
-		if($contentType != '' && $data !=''){
-			$this->_contentType = $contentType;
-			$this->data = $data;
-		}
-		
-		parent::__construct();
-
-	}
-
-	public function save($fileName){
+class parseFile extends parseRestClient
+{
+	public function save($fileName,$contentType='',$data=''){
 		if($fileName != '' && $this->_contentType != '' && $this->data != ''){
 			$request = $this->request(array(
 				'method' => 'POST',
 				'requestUrl' => 'files/'.$fileName,
-				'contentType' => $this->_contentType,
-				'data' => $this->data,
+				'contentType' => $contentType,
+				'data' => $data,
 			));
 			return $request;
 		}
@@ -30,12 +17,12 @@ class parseFile extends parseRestClient{
 		}
 	}
 
-	public function delete($parseFileName){
+	public function delete($parseFileName,$contentType){
 		if($parseFileName != ''){
 			$request = $this->request(array(
 				'method' => 'DELETE',
 				'requestUrl' => 'files/'.$parseFileName,
-				'contentType' => $this->_contentType,
+				'contentType' => $contentType,
 			));
 			return $request;
 
