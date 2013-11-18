@@ -45,7 +45,7 @@ EXAMPLE
 <?php 
     //This example is a sample video upload stored in parse
     
-    $parse = new parseObject('Videos');
+    $parse = new parseObject($parseConfig);
     $parse->title = $data['upload_data']['title'];
     $parse->description = $data['upload_data']['description'];
     $parse->tags = $data['upload_data']['tags'];
