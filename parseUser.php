@@ -179,9 +179,5 @@ public function socialLogin(){
 			$this->throwError('email is required for the requestPasswordReset method');
 		}
 
+	}
 }
-
-	
-}
-
-?>
