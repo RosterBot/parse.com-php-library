@@ -1,13 +1,4 @@
 <?php
-include 'parseConfig.php';
-include 'parseObject.php';
-include 'parseQuery.php';
-include 'parseUser.php';
-include 'parseFile.php';
-include 'parsePush.php';
-include 'parseGeoPoint.php';
-include 'parseACL.php';
-include 'parseCloud.php';
 
 class parseRestClient{
 
